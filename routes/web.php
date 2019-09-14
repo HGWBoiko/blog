@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/post', function () {
-    return 'fgfgdf';
-});
-Route::get('/about', "AboutController@index");
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', "AboutController@index")->name('about') ;
+Route::get('/post', "PostController@index")->name('post') ;
+Route::get('/contact', "ContactController@index")->name('contact') ;
